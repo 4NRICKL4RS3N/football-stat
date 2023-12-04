@@ -59,13 +59,16 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost",
-    "https://foot-stat.onrender.com/myapi/data/defense-general",
-    "https://foot-stat.onrender.com/myapi/data/defense-domicil",
-    "https://foot-stat.onrender.com/myapi/data/defense-exterieur",
-    "https://foot-stat.onrender.com/myapi/data/attaque-general",
-    "https://foot-stat.onrender.com/myapi/data/attaque-domicil",
-    "https://foot-stat.onrender.com/myapi/data/attaque-exterieur",
+    "*",
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
 ]
 
 ROOT_URLCONF = 'footballStat.urls'
