@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import StatView
+from .views import *
 
 urlpatterns = [
     path('data/general-general', GeneralGeneralView.as_view(), name='general-general-data'),
