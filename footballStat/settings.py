@@ -79,12 +79,12 @@ WSGI_APPLICATION = 'footballStat.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'footStat',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgres',
+        'NAME': 'footstat_jw3k',
+        'USER': 'footstat_jw3k_user',
+        'PASSWORD': '1gR8PcxwHmOZqadI0GHvIvY4t9ZqSXPJ',
+        'HOST': 'dpg-clmmk9b8772c73du3hig-a',
+        'PORT': '5432',
     }
 }
 
