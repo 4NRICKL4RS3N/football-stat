@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db import connection 
 
-from .serializers import GeneralStatSerializer
+from .serializers import *
 
 class GeneralGeneralView(APIView):
     def get(self, request):
@@ -44,7 +44,7 @@ class DefenseGeneralView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tacles_pm': row[3], 'interceptions_pm': row[4], 'fautes_pm': row[5], 'hors_jeux_pm': row[6], 'note': row[7]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = DefenseStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
 
@@ -55,7 +55,7 @@ class DefenseDomicilView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tacles_pm': row[3], 'interceptions_pm': row[4], 'fautes_pm': row[5], 'hors_jeux_pm': row[6], 'note': row[7]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = DefenseStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
 
@@ -66,7 +66,7 @@ class DefenseExterieurView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tacles_pm': row[3], 'interceptions_pm': row[4], 'fautes_pm': row[5], 'hors_jeux_pm': row[6], 'note': row[7]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = DefenseStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
 
@@ -77,7 +77,7 @@ class AttaqueGeneralView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tirs_ca_pm': row[3], 'dribbles_pm': row[4], 'fautes_subies_pm': row[5], 'note': row[6]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = AttaqueStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
 
@@ -88,7 +88,7 @@ class AttaqueDomicilView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tirs_ca_pm': row[3], 'dribbles_pm': row[4], 'fautes_subies_pm': row[5], 'note': row[6]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = AttaqueStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
 
@@ -99,6 +99,6 @@ class AttaqueExterieurView(APIView):
             rows = cursor.fetchall()
         
         data = [{'equipe': row[0], 'competition': row[1], 'tirs_pm': row[2], 'tirs_ca_pm': row[3], 'dribbles_pm': row[4], 'fautes_subies_pm': row[5], 'note': row[6]} for row in rows]
-        serializer = GeneralStatSerializer(data=data, many=True)
+        serializer = AttaqueStatSerializer(data=data, many=True)
         serializer.is_valid()
         return Response(serializer.data)
