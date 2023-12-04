@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,20 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
+
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost",
+    "https://foot-stat.onrender.com/myapi/data/defense-general",
+    "https://foot-stat.onrender.com/myapi/data/defense-domicil",
+    "https://foot-stat.onrender.com/myapi/data/defense-exterieur",
+    "https://foot-stat.onrender.com/myapi/data/attaque-general",
+    "https://foot-stat.onrender.com/myapi/data/attaque-domicil",
+    "https://foot-stat.onrender.com/myapi/data/attaque-exterieur",
 ]
 
 ROOT_URLCONF = 'footballStat.urls'
