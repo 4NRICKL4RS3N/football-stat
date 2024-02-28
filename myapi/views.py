@@ -4,6 +4,9 @@ from django.db import connection
 
 from .serializers import *
 
+def index(request):
+    return render(request, "index.html")
+
 class GeneralGeneralView(APIView):
     def get(self, request):
         with connection.cursor() as cursor:
